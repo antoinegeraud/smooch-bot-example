@@ -11,17 +11,17 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('Hi! I\'m Smooch Bot!')
+            return bot.say('Bonjour! Je m\'appelle Estèphe et je suis un bot !')
                 .then(() => 'askName');
         }
     },
 
     askName: {
-        prompt: (bot) => bot.say('What\'s your name?'),
+        prompt: (bot) => bot.say('Comment t\'appelles-tu ?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I'll call you ${name}`))
+                .then(() => bot.say(`Super ! Je vais donc t'appeller ${name}`))
                 .then(() => 'finish');
         }
     },
@@ -29,8 +29,8 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-                        'teach me how to do anything else!'))
+                .then((name) => bot.say(`Bien reçu ${name}, donne ` +
+                        'moi quelques minutes que je prépare ma réponse :) !'))
                 .then(() => 'finish');
         }
     }
