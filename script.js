@@ -30,5 +30,4 @@ module.exports = new Script({
                         'appris à faire autre chose!'))
                 .then(() => 'finish');
         }
-    }
 });
