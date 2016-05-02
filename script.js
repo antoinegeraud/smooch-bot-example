@@ -10,7 +10,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('Hi! I\'m Smooch Bot!')
+            return bot.say('Bonjour! Je m\'appelle Estèphe!')
                 .then(() => 'askName');
         }
     },
@@ -20,7 +20,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I'll call you ${name}`))
+                .then(() => bot.say(`Super! Je vais t'appeler ${name}`))
                 .then(() => 'finish');
         }
     },
@@ -28,7 +28,7 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say(`Désolé ${name}, mon créateur ne m/'a pas ` +
+                .then((name) => bot.say(`Désolé ${name}, mon créateur ne m'a pas ` +
                         'appris à faire autre chose!'))
                 .then(() => 'finish');
         }
