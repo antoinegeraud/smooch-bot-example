@@ -21,7 +21,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Super ! Je vais donc t'appeller ${name}`))
+                .then(() => bot.say(`Super ! Je vais donc t'appeller ${name}. Tu peux maintenant me poser n'importe quelle question.`))
                 .then(() => 'finish');
         }
     },
